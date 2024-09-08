@@ -2,6 +2,7 @@ package com.aliza.aliza_springBoot.controller
 
 import com.aliza.aliza_springBoot.data.model.Student
 import com.aliza.aliza_springBoot.data.repository.StudentRepository
+import com.google.gson.Gson
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -19,6 +20,18 @@ class StudentController {
     fun getAllStudents(): ResponseEntity<MutableIterable<Student>> {
         val dataFromDatabase = _studentRepository.findAll()
         return ResponseEntity.ok(dataFromDatabase)
+    }
+
+    @PostMapping("/student")
+    fun insertStudent(@RequestBody data: String): ResponseEntity<Int> {
+
+        val gson = Gson()
+        val newStudent = gson.fromJson(data, Student::class.java)
+
+        _studentRepository.save(newStudent)
+
+        //Here you can check the data whether what we want is.
+        return ResponseEntity.ok(200)
     }
 
 }

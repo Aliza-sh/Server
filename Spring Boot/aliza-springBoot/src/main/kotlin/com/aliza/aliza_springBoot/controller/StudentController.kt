@@ -34,4 +34,21 @@ class StudentController {
         return ResponseEntity.ok(200)
     }
 
+    @PutMapping("/student/updating{name}")
+    fun updateStudent(
+        @PathVariable("name") name: String,
+        @RequestBody data: String
+    ): ResponseEntity<Int> {
+
+        val gson = Gson()
+        val newStudent: Student = gson.fromJson(data, Student::class.java)
+
+        _studentRepository.save(newStudent)
+
+        println(name)
+
+        //Here you can check the data whether what we want is.
+        return ResponseEntity.ok(200)
+    }
+
 }

@@ -51,4 +51,12 @@ class StudentController {
         return ResponseEntity.ok(200)
     }
 
+    @DeleteMapping("/student/deleting{name}")
+    fun deleteStudent( @PathVariable("name") name:String ) : ResponseEntity<Int> {
+
+        _studentRepository.deleteById(name)
+        return ResponseEntity.ok(200)
+
+    }
+
 }

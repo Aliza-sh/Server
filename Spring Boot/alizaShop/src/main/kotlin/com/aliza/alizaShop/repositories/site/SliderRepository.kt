@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface SliderRepository : PagingAndSortingRepository<Slider, Long>, CrudRepository<Slider, Long> {
+    override fun findAll(): List<Slider>
 }

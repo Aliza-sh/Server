@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface BlogRepository : PagingAndSortingRepository<Blog, Long>, CrudRepository<Blog, Long> {
+    override fun findAll(): List<Blog>
 }

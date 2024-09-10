@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface UserRepository : PagingAndSortingRepository<User, Long>, CrudRepository<User, Long> {
+    fun findFirstByUsernameAndPassword(username: String, password: String): User?
 }

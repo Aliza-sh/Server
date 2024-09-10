@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ProductCategoryRepository : PagingAndSortingRepository<ProductCategory, Long>,
     CrudRepository<ProductCategory, Long> {
+    override fun findAll(): List<ProductCategory>
 }

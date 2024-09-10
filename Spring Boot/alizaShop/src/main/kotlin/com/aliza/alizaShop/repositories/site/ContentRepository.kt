@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ContentRepository : PagingAndSortingRepository<Content, Long>, CrudRepository<Content, Long> {
+    override fun findAll(): List<Content>
+    fun findFirstByTitle(title: String): Content?
 }

@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ColorRepository : PagingAndSortingRepository<Color, Long>, CrudRepository<Color, Long> {
+    override fun findAll(): List<Color>
 }

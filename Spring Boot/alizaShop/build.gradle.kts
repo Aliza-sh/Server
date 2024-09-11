@@ -36,6 +36,8 @@ dependencies {
 	implementation("io.springfox:springfox-boot-starter:3.0.0")*/
 
 	implementation("io.jsonwebtoken:jjwt:0.12.6")
+
+	implementation("com.google.guava:guava:33.3.0-jre")
 }
 
 kotlin {

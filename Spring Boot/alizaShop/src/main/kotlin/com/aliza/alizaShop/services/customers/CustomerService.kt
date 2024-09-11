@@ -12,6 +12,12 @@ class CustomerService {
     private lateinit var repository: CustomerRepository
 
     fun insert(data: Customer): Customer {
+        if (data.firstName.isEmpty())
+            throw Exception("Please enter firstname")
+        if (data.lastName.isEmpty())
+            throw Exception("Please enter lastname")
+        if (data.phone.isEmpty())
+            throw Exception("Please enter phone")
         return repository.save(data)
     }
 

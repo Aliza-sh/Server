@@ -30,6 +30,10 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+	/*implementation("io.springfox:springfox-swagger2:3.0.0")
+	implementation("io.springfox:springfox-swagger-ui:3.0.0")
+	implementation("io.springfox:springfox-boot-starter:3.0.0")*/
 }
 
 kotlin {

@@ -26,4 +26,8 @@ class TransactionService {
         return data.get()
     }
 
+    fun getByTransId(transId: String): Transaction? {
+        return repository.findByTransId(transId)
+    }
+
 }

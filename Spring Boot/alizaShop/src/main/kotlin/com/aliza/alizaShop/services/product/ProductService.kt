@@ -40,4 +40,8 @@ class ProductService {
         return repository.count()
     }
 
+    fun getAllByIdList(idList: List<Long>): List<Product> {
+        return repository.findAllByIdList(idList)
+    }
+
 }

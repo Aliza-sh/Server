@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface TransactionRepository : PagingAndSortingRepository<Transaction, Long>, CrudRepository<Transaction, Long> {
+    fun findByTransId(transId: String): Transaction?
 }

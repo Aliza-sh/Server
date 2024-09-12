@@ -31,8 +31,8 @@ class JwtRequestFilter : Filter {
     init {
         excludeUrls.add("/api/user/login")
         excludeUrls.add("/api/user/register")
-        excludeUrls.add("/api/trx/gotoPayment")
-        excludeUrls.add("/api/trx/verify")
+        excludeUrls.add("/api/trx/gotoPayment" )
+        excludeUrls.add("/api/trx/verify" )
 
         excludeContainsUrls.add("/api/color")
         excludeContainsUrls.add("/api/productCategory")

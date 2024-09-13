@@ -1,9 +1,9 @@
 package com.aliza.alizaKtor.plugins
 
 import freemarker.cache.*
+import com.aliza.alizaKtor.router.webRouting
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
-import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Application.configureTemplating() {
@@ -11,9 +11,7 @@ fun Application.configureTemplating() {
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
     }
     routing {
-        get("/html-freemarker") {
-            call.respond(FreeMarkerContent("index.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
-        }
+        webRouting()
     }
 }
 

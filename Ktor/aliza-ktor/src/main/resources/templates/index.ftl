@@ -1,8 +1,9 @@
 <html>
 <body>
-<h1>Items:</h1>
-<#list data.items as item>
-    <h2>The item at index ${item?index} is ${item}</h2>
+<img src="/src/img/aliza.jpg" width="300"/>
+<h1>Students:</h1>
+<#list data as student>
+    <h2>${student.firstName} ${student.lastName} (${student.code})</h2>
 </#list>
 </body>
 </html>
